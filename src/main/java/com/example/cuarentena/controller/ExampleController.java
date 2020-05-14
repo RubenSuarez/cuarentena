@@ -9,7 +9,7 @@ public class ExampleController {
 	
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String example() {
-		return "HOLA MUNDO";
+		return "HOLA MUNDO.HOLA TUKAAAAAAA!!!";
 	}
 	
 }
