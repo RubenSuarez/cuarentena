@@ -1,13 +1,13 @@
-package com.example.cuarentena;
+package com.cuarentena.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CuarentenaApplication {
+public class WebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CuarentenaApplication.class, args);
+		SpringApplication.run(WebApplication.class, args);
 	}
 
 }
