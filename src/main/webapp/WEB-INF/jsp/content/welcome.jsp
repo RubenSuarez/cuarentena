@@ -2,5 +2,5 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <div>
-	Aca va la info de usuario
+	Aca va la info de usuario: ${user.name}
 </div>
