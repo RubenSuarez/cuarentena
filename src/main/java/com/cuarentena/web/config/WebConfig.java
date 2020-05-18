@@ -21,13 +21,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
                 .antMatchers("/css/**")
-                .antMatchers("/fonts/**")
-                .antMatchers("/img/**")
-                .antMatchers("/images/**")
-                .antMatchers("/js/**")
-                .antMatchers("/media/**")
-                .antMatchers("/vendors/**")
-                .antMatchers("/video/**");
+                .antMatchers("/js/**");
     }
 	
 	@Bean
