@@ -15,6 +15,7 @@ public class UserService {
 	
 	public UserDTO getUser() {
 		User user = userDAO.findById(1L).orElse(new User("no funca", "no funca", "no funca", "no funca"));
+//		User user = userDAO.getOne(1L);
 		UserDTO userDTO = new UserDTO(user);
 		return userDTO;
 	}

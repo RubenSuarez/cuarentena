@@ -14,7 +14,13 @@
     </definition>
     
     <definition name="welcome" extends="page">
+    	<put-attribute name="content" value="/WEB-INF/jsp/content/welcome.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="menu" extends="page">
     	<put-attribute name="content" value="/WEB-INF/jsp/content/welcome.jsp"></put-attribute>    
     </definition>
+    
+    
     
 </tiles-definitions>
