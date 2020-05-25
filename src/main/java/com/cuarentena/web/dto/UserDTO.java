@@ -6,13 +6,13 @@ public class UserDTO {
 	
 	private Long id;
 	private String email;
-	private String username;
+	private String surname;
 	private String name;
 	
 	public UserDTO(User user) {
 		this.id = user.getId();
 		this.email = user.getEmail();
-		this.username = user.getUsername();
+		this.surname = user.getSurname();
 		this.name = user.getName();
 	}
 
@@ -28,12 +28,12 @@ public class UserDTO {
 		this.email = email;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
 	public String getName() {

@@ -9,6 +9,11 @@
     	<put-attribute name="content" value="/WEB-INF/jsp/content/login.jsp"></put-attribute>
     </definition>
     
+    <definition name="sign-up" template="/WEB-INF/jsp/view/login.jsp">
+    	<put-attribute name="head" value="/WEB-INF/jsp/head/login.jsp"></put-attribute>
+    	<put-attribute name="content" value="/WEB-INF/jsp/content/sign-up.jsp"></put-attribute>
+    </definition>
+    
     <definition name="page" template="/WEB-INF/jsp/view/page.jsp">
 		<put-attribute name="head" value="/WEB-INF/jsp/head/page.jsp"></put-attribute>
     </definition>
