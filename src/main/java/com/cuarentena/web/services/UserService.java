@@ -1,6 +1,7 @@
 package com.cuarentena.web.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cuarentena.web.dao.UserDAO;
@@ -13,6 +14,8 @@ public class UserService {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();	
 	
 	public UserDTO getUser() {
 		User user = userDAO.findById(1L).orElse(new User("no funca", "no funca", "no funca", "no funca"));
@@ -32,9 +35,25 @@ public class UserService {
 		if(user != null) {
 			return false;
 		}
-		
-		userDAO.save(new User(userForm.getName(), userForm.getSurname(), userForm.getEmail(), userForm.getPassword()));
+		String password = bCryptPasswordEncoder.encode(userForm.getPassword());
+		userDAO.save(new User(userForm.getName(), userForm.getSurname(), userForm.getEmail(), password));
 		
 		return true;
+	}
+	
+	public String validarPass(UserForm user) {
+		String email = user.getEmail();
+		String pass =  bCryptPasswordEncoder.encode(user.getPassword());
+		User usuarioRegistrado = userDAO.findByEmail(email);
+		if(usuarioRegistrado != null) {
+			//el usuario existe 
+			if(usuarioRegistrado.getPassword() == pass) {
+				return "acceso permitido";
+			}
+			else {
+				return "password invalido";
+			}
+		}
+		return "email invalido";
 	}
 }
