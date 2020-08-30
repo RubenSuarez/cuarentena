@@ -1,11 +1,21 @@
 package com.cuarentena.web.form;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class UserForm {
-	
+	@NotEmpty(message = "Debe ingresar un nombre")
 	private String name;
+	@NotEmpty(message = "Debe ingresar un apellido")
 	private String surname;
+	@NotEmpty(message = "El email es requerido.")
+	@Email(message="El email debe ser valido.")
 	private String email;
+	@NotEmpty(message = "Debe ingresar una contraseña")
 	private String password;
+	@NotEmpty(message = "Debe repetir la contraseña")
 	private String repeatPassword;
 	
 	public UserForm() {}

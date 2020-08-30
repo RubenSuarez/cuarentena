@@ -18,7 +18,7 @@ public class UserService {
 	private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();	
 	
 	public UserDTO getUser() {
-		User user = userDAO.findById(1L).orElse(new User("no funca", "no funca", "no funca", "no funca"));
+		User user = userDAO.findById(1L).orElse(new User("no funca", "no funca","no funca", "no funca", "no funca"));
 //		User user = userDAO.getOne(1L);
 		UserDTO userDTO = new UserDTO(user);
 		return userDTO;
@@ -36,7 +36,7 @@ public class UserService {
 			return false;
 		}
 		String password = bCryptPasswordEncoder.encode(userForm.getPassword());
-		userDAO.save(new User(userForm.getName(), userForm.getSurname(), userForm.getEmail(), password));
+		userDAO.save(new User(userForm.getName(), userForm.getEmail(), userForm.getSurname(), userForm.getEmail(), password));
 		
 		return true;
 	}

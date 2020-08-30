@@ -5,6 +5,6 @@
     <title>Nombre de página</title>
 
     <!-- CSS -->
-    <link href="${applicationName}/css/login-register/styles.css" rel="stylesheet">
+<%--     <link href="${applicationName}/css/login-register/styles.css" rel="stylesheet"> --%>
     <link href="${applicationName}/css/bootstrap/css/bootstrap.css" rel="stylesheet">
 </head>
