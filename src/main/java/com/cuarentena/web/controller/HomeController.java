@@ -10,6 +10,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String index(Model model) {
-		return "welcome";
+		return "index";
 	}
 }

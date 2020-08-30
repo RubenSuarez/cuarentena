@@ -46,11 +46,6 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
     
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-//		http.authorizeRequests()
-//			.antMatchers("/", "/home").permitAll()
-//			.anyRequest().authenticated()
-//			.and().formLogin()
-//			.loginPage("/login").permitAll().and().logout().permitAll();
 		http.userDetailsService(userDetailsService);
         http.csrf().disable();
         http.rememberMe().key("remember-me").tokenValiditySeconds(120000); //2 min
@@ -59,32 +54,33 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
         http.authorizeRequests()
         
         		/***********Todos los usuarios ***********************************/
-                .antMatchers("/login").permitAll()
-                .antMatchers("/register").permitAll()
-                .antMatchers("/user/resetPassword").permitAll()
-                .antMatchers("/resetPassword").permitAll()
-		        .antMatchers("/generatePassword").permitAll()
-                .antMatchers("/").authenticated()
-                .antMatchers("/clear-password").authenticated()
-		        .antMatchers("/new-password").authenticated()
-		        .antMatchers("/example/**").permitAll()
+                .antMatchers("/").permitAll()
+        		.antMatchers("/login").permitAll()
+                .antMatchers("/register").permitAll();
+//                .antMatchers("/user/resetPassword").permitAll()
+//                .antMatchers("/resetPassword").permitAll()
+//		        .antMatchers("/generatePassword").permitAll()
+//                .antMatchers("/").authenticated()
+//                .antMatchers("/clear-password").authenticated()
+//		        .antMatchers("/new-password").authenticated()
+//		        .antMatchers("/example/**").permitAll()
 		        
 		        /***********Usuario sucursal o validacion *************************/
-		        .antMatchers("/branch/**").hasRole("BRANCH")
-		        .antMatchers("/user/register/client").hasAnyRole("BRANCH", "ADMIN")
-		        .antMatchers("/user/get/client").hasAnyRole("BRANCH", "ADMIN")
-		        .antMatchers("/user/edit/client").hasAnyRole("BRANCH", "ADMIN")
-		        .antMatchers("/user/delete/client").hasAnyRole("BRANCH", "ADMIN")
+//		        .antMatchers("/branch/**").hasRole("BRANCH")
+//		        .antMatchers("/user/register/client").hasAnyRole("BRANCH", "ADMIN")
+//		        .antMatchers("/user/get/client").hasAnyRole("BRANCH", "ADMIN")
+//		        .antMatchers("/user/edit/client").hasAnyRole("BRANCH", "ADMIN")
+//		        .antMatchers("/user/delete/client").hasAnyRole("BRANCH", "ADMIN")
 		        
 		        /***********Usuario marketing *************************************/
-		        .antMatchers("/statistics**").hasAnyRole("MARKETING","ADMIN")
-		        .antMatchers("/promos**","/promos/**").hasAnyRole("MARKETING","ADMIN")
-		        .antMatchers("/blog**","/blog/**").hasAnyRole("MARKETING","ADMIN")
-		        .antMatchers("/push**","/push/**").hasAnyRole("MARKETING","ADMIN")
-		        .antMatchers("/surveys**","/surveys/**").hasAnyRole("MARKETING","ADMIN")
-		        
+//		        .antMatchers("/statistics**").hasAnyRole("MARKETING","ADMIN")
+//		        .antMatchers("/promos**","/promos/**").hasAnyRole("MARKETING","ADMIN")
+//		        .antMatchers("/blog**","/blog/**").hasAnyRole("MARKETING","ADMIN")
+//		        .antMatchers("/push**","/push/**").hasAnyRole("MARKETING","ADMIN")
+//		        .antMatchers("/surveys**","/surveys/**").hasAnyRole("MARKETING","ADMIN")
+//		        
 		        /***********El resto solo usuario admin ****************************/
-                .anyRequest().hasRole("ADMIN");
+//                .anyRequest().hasRole("ADMIN");
 	}
 	
 	@Override

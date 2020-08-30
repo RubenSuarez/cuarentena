@@ -5,7 +5,7 @@
     <title>Nombre de página</title>
 
     <!-- CSS -->
-<%--     <link href="${applicationName}/css/styles.css" rel="stylesheet"> --%>
+    <link href="${applicationName}/css/home/styles.css" rel="stylesheet"> 
 	<!-- ACA IRÍA TODO LOS ARCHIVOS PRINCIPALES DE CSS Y JQUERY -->
-    <link href="${applicationName}/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+<%--     <link href="${applicationName}/css/bootstrap/css/bootstrap.css" rel="stylesheet"> --%>
 </head>

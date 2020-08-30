@@ -18,8 +18,8 @@
 		<put-attribute name="head" value="/WEB-INF/jsp/head/page.jsp"></put-attribute>
     </definition>
     
-    <definition name="welcome" extends="page">
-    	<put-attribute name="content" value="/WEB-INF/jsp/content/welcome.jsp"></put-attribute>
+    <definition name="index" extends="page">
+    	<put-attribute name="content" value="/WEB-INF/jsp/content/index.jsp"></put-attribute>
     </definition>
     
     <definition name="menu" extends="page">
